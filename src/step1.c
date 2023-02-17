@@ -1,18 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "step1.h"
 
-// Define a struct to represent an item
-typedef struct {
-    int weight;
-    int value;
-    int setup_cost;
-} Item;
-
-// Define a struct to represent a solution
-typedef struct {
-    int *items; // binary vector indicating which items are included in the knapsack
-    int value; // total value of the selected items
-} Solution;
 
 // Function to read the problem data from a file and store it in an array of items
 Item *read_items(const char *filename, int *n, int *capacity) {

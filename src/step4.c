@@ -1,3 +1,5 @@
+#include "step1.h"
+
 // Function to perform local search on a solution using 1-flip and swap moves
 void local_search(Solution *solution, Item *items, int capacity, int n) {
     int improved = 1;

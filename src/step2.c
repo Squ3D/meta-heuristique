@@ -1,15 +1,20 @@
-// Function to check if a solution is feasible
-int is_feasible(Solution *solution, Item *items, int capacity, int n) {
-    int total_weight = 0;
-    int total_setup = 0;
+#include "step1.h"
+
+//This function check if a solution is feasible
+int isFeasible(Solution *solution, Item *items, int capacity, int n) {
+    int totalWeight = 0;
+    int totalSetup = 0;
     for (int i = 0; i < n; i++) {
         if (solution->items[i]) {
-            total_weight += items[i].weight;
-            if (!total_setup || items[i].setup_cost > total_setup) {
-                total_setup = items[i].setup_cost;
+            totalWeight += items[i].weight;
+            if (!totalSetup || items[i].setup_cost > totalSetup) {
+                totalSetup = items[i].setup_cost;
+            }
+            if (!solution->setup_cost || items[i].setup_cost > solution->setup_cost) {
+                solution->setup_cost = items[i].setup_cost;
             }
         }
     }
-    return (total_weight <= capacity) && (total_setup <= (solution->total_value - solution->setup_cost));
+    return (totalWeight <= capacity) && (totalSetup <= (solution->value - solution->setup_cost));
 }
 

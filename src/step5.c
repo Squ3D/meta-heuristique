@@ -1,3 +1,5 @@
+#include "step1.h"
+
 // Function to perform genetic algorithm on a set of items and capacity constraint
 Solution genetic_algorithm(Item *items, int capacity, int n, int pop_size, int num_generations) {
     // Initialize population

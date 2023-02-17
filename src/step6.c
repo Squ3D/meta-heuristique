@@ -1,3 +1,5 @@
+#include "step1.h"
+
 // Function to run experiments on the knapsack problem
 void run_experiments() {
     // Read data from file
